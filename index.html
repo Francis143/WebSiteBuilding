@@ -3,76 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Web App Demo</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Profile & Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ece9e6, #ffffff);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        header p {
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+        section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #4facfe;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        .editable {
+            border: 1px dashed #e72c2c;
+            padding: 10px;
+            border-radius: 4px;
+            background: #fff;
+            min-height: 40px;
+        }
+        .editable:focus {
+            outline: none;
+            border-color: #4facfe;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background: #fff;
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+        .portfolio-item h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
-
-    <!-- Main Container -->
-    <div class="main-container">
-        <!-- Left-Aligned Smaller Element -->
-        <div class="left-element">
-            <h2>This is a smaller left-aligned element</h2>
-            <p>This element is placed on the left side and is made a bit smaller.</p>
-        </div>
-
-        <!-- Right-Aligned Section for Other Elements -->
-        <div class="right-section">
-            <!-- Textbox Section -->
-            <div class="section">
-                <h2>Textbox</h2>
-                <input type="text" id="textbox" placeholder="Enter some text">
-            </div>
-
-            <!-- Button Section -->
-            <div class="section">
-                <h2>Button</h2>
-                <button onclick="alertText()">Click Me</button>
-            </div>
-
-            <!-- Radio Buttons Section -->
-            <div class="section">
-                <h2>Radio Buttons</h2>
-                <label><input type="radio" name="radioGroup" value="option1"> Option 1</label>
-                <label><input type="radio" name="radioGroup" value="option2"> Option 2</label>
-            </div>
-
-            <!-- Checkboxes Section -->
-            <div class="section">
-                <h2>Checkboxes</h2>
-                <label><input type="checkbox" name="checkbox1"> Checkbox 1</label>
-                <label><input type="checkbox" name="checkbox2"> Checkbox 2</label>
-            </div>
-
-            <!-- Iframe Section -->
-            <div class="section">
-                <h2>Iframe</h2>
-                <iframe src="https://www.example.com" width="600" height="400"></iframe>
-            </div>
-
-            <!-- Shadow DOM Section -->
-            <div class="section">
-                <h2>Shadow DOM</h2>
-                <div id="shadow-container"></div>
-            </div>
-
-            <!-- Child Tab Section -->
-            <div class="section">
-                <h2>Child Tab</h2>
-                <button onclick="openTab()">Open Child Tab</button>
-                <div id="tab-content" style="display:none;">
-                    <p>This is content inside the child tab!</p>
+    <header>
+        <!-- <h1 contenteditable="true" class="editable">John Doe</h1>
+        <p contenteditable="true" class="editable">Web Developer & Designer</p> -->
+    </header>
+    <div class="container">
+        <section>
+            <h2>Francis</h2>
+            <p contenteditable="true" class="editable">
+                I am a passionate Web Automation with expertise in creating modern Web Automation . I specialize in JAVA,JavaScript,Selenium,Cypress,Postman,RestAssured.
+            </p>
+        </section>
+        <section>
+            <h2>Portfolio</h2>
+            <div class="portfolio">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="Project Image">
+                    <h3 contenteditable="true" class="editable">Itm21st.com</h3>
+                    <p contenteditable="true" class="editable">An innovative web application built using React and Node.js.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="Project Image">
+                    <h3 contenteditable="true" class="editable">ABS Global</h3>
+                    <p contenteditable="true" class="editable">A responsive e-commerce site developed with HTML, CSS, and JavaScript.</p>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/300" alt="Project Image">
+                    <h3 contenteditable="true" class="editable">Allianz Insurance</h3>
+                    <p contenteditable="true" class="editable">A portfolio website showcasing my skills and achievements.</p>
                 </div>
             </div>
-
-            <!-- New Window Section -->
-            <div class="section">
-                <h2>New Window</h2>
-                <button onclick="openNewWindow()">Open New Window</button>
-            </div>
-        </div>
+        </section>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
