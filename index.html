@@ -3,131 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-        }
-        .login-container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .login-container h1 {
-            margin-bottom: 24px;
-            font-size: 28px;
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 20px;
-            position: relative;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid #ddd;
-            border-radius: 6px;
-            font-size: 16px;
-            transition: border-color 0.3s;
-        }
-        .form-group input:focus {
-            border-color: #4facfe;
-            outline: none;
-        }
-        .form-group label {
-            position: absolute;
-            top: 12px;
-            left: 16px;
-            font-size: 16px;
-            color: #aaa;
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-        .form-group input:focus + label,
-        .form-group input:not(:placeholder-shown) + label {
-            top: -8px;
-            left: 12px;
-            font-size: 12px;
-            color: #4facfe;
-        }
-        .login-button {
-            width: 100%;
-            padding: 12px;
-            background-color: #4facfe;
-            color: #ffffff;
-            border: none;
-            border-radius: 6px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .login-button:hover {
-            background-color: #00d1ff;
-        }
-        .forgot-password {
-            margin-top: 12px;
-            font-size: 14px;
-        }
-        .forgot-password a {
-            color: #4facfe;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        .forgot-password a:hover {
-            color: #00d1ff;
-        }
-        .error-message {
-            color: red;
-            font-size: 14px;
-            margin-top: 10px;
-            display: none;
-        }
-    </style>
+    <title>Colorful Web App Demo</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Welcome Back</h1>
-        <form id="loginForm">
-            <div class="form-group">
-                <input type="text" id="username" name="username" placeholder=" " required>
-                <label for="username">Username</label>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left-Aligned Smaller Element -->
+        <div class="left-element">
+            <h2>This is a smaller left-aligned element</h2>
+            <p>This element is placed on the left side and is made a bit smaller.</p>
+        </div>
+
+        <!-- Right-Aligned Section for Other Elements -->
+        <div class="right-section">
+            <!-- Textbox Section -->
+            <div class="section">
+                <h2>Textbox</h2>
+                <input type="text" id="textbox" placeholder="Enter some text">
             </div>
-            <div class="form-group">
-                <input type="password" id="password" name="password" placeholder=" " required>
-                <label for="password">Password</label>
+
+            <!-- Button Section -->
+            <div class="section">
+                <h2>Button</h2>
+                <button onclick="alertText()">Click Me</button>
             </div>
-            <button type="submit" class="login-button">Login</button>
-            <p class="forgot-password">Forgot your password? <a href="#">Reset it</a></p>
-            <p class="error-message" id="errorMessage">Invalid username or password.</p>
-        </form>
+
+            <!-- Radio Buttons Section -->
+            <div class="section">
+                <h2>Radio Buttons</h2>
+                <label><input type="radio" name="radioGroup" value="option1"> Option 1</label>
+                <label><input type="radio" name="radioGroup" value="option2"> Option 2</label>
+            </div>
+
+            <!-- Checkboxes Section -->
+            <div class="section">
+                <h2>Checkboxes</h2>
+                <label><input type="checkbox" name="checkbox1"> Checkbox 1</label>
+                <label><input type="checkbox" name="checkbox2"> Checkbox 2</label>
+            </div>
+
+            <!-- Iframe Section -->
+            <div class="section">
+                <h2>Iframe</h2>
+                <iframe src="https://www.example.com" width="600" height="400"></iframe>
+            </div>
+
+            <!-- Shadow DOM Section -->
+            <div class="section">
+                <h2>Shadow DOM</h2>
+                <div id="shadow-container"></div>
+            </div>
+
+            <!-- Child Tab Section -->
+            <div class="section">
+                <h2>Child Tab</h2>
+                <button onclick="openTab()">Open Child Tab</button>
+                <div id="tab-content" style="display:none;">
+                    <p>This is content inside the child tab!</p>
+                </div>
+            </div>
+
+            <!-- New Window Section -->
+            <div class="section">
+                <h2>New Window</h2>
+                <button onclick="openNewWindow()">Open New Window</button>
+            </div>
+        </div>
     </div>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
 
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // Simple client-side validation (replace with server-side validation in production)
-            if (username === 'admin' && password === 'password123') {
-                alert('Login successful!');
-            } else {
-                const errorMessage = document.getElementById('errorMessage');
-                errorMessage.style.display = 'block';
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
